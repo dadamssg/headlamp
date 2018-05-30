@@ -25,4 +25,5 @@ small {
 
 .card-body pre {
     font-size: 76.5%;
+    overflow-x: scroll;
 }
