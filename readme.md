@@ -312,13 +312,5 @@ The above would match:
 /companies/:companyUnid/employees/:unid/address
 ```
 
-### Lines
-10 lines are shown by default in the code excerpts. This can be increased by providing a `lines` query parameter
-to the url. Ex.
-
-```
-http://localhost:8083/request/Z2V0LS9jb21wYW5pZXM=?lines=30
-```
-
 ### Git dates
 Hovering over file names will show the last modified date according to git.
