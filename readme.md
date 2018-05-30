@@ -18,6 +18,8 @@ server/
 In your express api bootstrap file:
 
 ```js
+// server/server.js
+
 import express from 'express'
 import bodyParser from 'body-parser'
 import path from 'path'
