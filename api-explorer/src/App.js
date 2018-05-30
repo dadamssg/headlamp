@@ -78,7 +78,7 @@ class App extends Component {
                 <Fragment>
                   <a
                     className='ml-3'
-                    onClick={window.location.reload}
+                    onClick={() => window.location.reload()}
                     title='Refresh'
                     style={{cursor: 'pointer', color: '#007bff'}}
                   >
