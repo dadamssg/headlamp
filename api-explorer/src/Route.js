@@ -35,7 +35,7 @@ class Route extends Component {
     const {expanded} = this.state
     return (
       <div className='card'>
-        <div className='card-body' style={{paddingBottom: '.75rem', paddingTop: '1rem'}}>
+        <div className='card-body' style={{paddingBottom: expanded ? '1rem' : '.75rem', paddingTop: '1rem'}}>
           <div className={`row ${this.state.expanded && 'mb-2'}`}>
             <div className='col-11'>
               <a onClick={() => this.setState({expanded: !expanded})} style={{cursor: 'pointer'}}>
