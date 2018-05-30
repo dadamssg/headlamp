@@ -74,14 +74,16 @@ class App extends Component {
                   <span className='oi oi-document' />
                 </a>
               )}
-              <a
-                className='ml-3'
-                onClick={() => this.setState({showOptions: !this.state.showOptions})}
-                title='Settings'
-                style={{cursor: 'pointer', color: '#007bff'}}
-              >
-                <span className='oi oi-cog' />
-              </a>
+              {this.state.src && (
+                <a
+                  className='ml-3'
+                  onClick={() => this.setState({showOptions: !this.state.showOptions})}
+                  title='Settings'
+                  style={{cursor: 'pointer', color: '#007bff'}}
+                >
+                  <span className='oi oi-cog' />
+                </a>
+              )}
             </div>
           </div>
           {this.state.src && this.state.showOptions && (
