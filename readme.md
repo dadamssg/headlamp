@@ -251,7 +251,7 @@ Or come from fixture files...
 export default {
   path: '/people',
   methods: ['GET'],
-  response: require('../fixtures/peope.json')
+  response: require('./_peope.json')
 }
 ```
 
@@ -278,7 +278,7 @@ export default {
       })
     }
 
-    return res.status(200).json(require('../fixtures/people.json'))
+    return res.status(200).json(require('./_people.json'))
   }
 }
 ```
