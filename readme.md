@@ -28,7 +28,7 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 
-// routes added here
+// old routes added here
 
 shine(app, {
   title: 'IOP API Docs',
