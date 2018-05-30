@@ -24,9 +24,8 @@ class App extends Component {
   }
   componentDidMount () {
     axios.get(`${config.api}/_api`).then(res => {
-      if (res.data.title) {
-        document.title = res.data.title
-      }
+      document.title = res.data.title || defaultTitle
+
       const routes = res.data.routes.map(r => {
         return {
           ...r,
