@@ -7,14 +7,15 @@ class RoutePage extends PureComponent {
   static propTypes = {
     routes: PropTypes.array,
     match: PropTypes.object,
-    hidePath: PropTypes.string
+    hidePath: PropTypes.string,
+    src: PropTypes.any
   }
 
   render () {
-    const {match, hidePath} = this.props
+    const {match, hidePath, src} = this.props
     const route = this.props.routes.find(r => r.id === match.params.id)
     return route
-      ? <Route route={route} hidePath={hidePath} />
+      ? <Route route={route} hidePath={hidePath} src={src} />
       : <div className={'text-center'}>No route found...</div>
   }
 }

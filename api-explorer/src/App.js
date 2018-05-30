@@ -95,15 +95,34 @@ class App extends Component {
           <Route
             exact
             path='/'
-            render={props => <Explorer {...props} routes={this.state.routes} hidePath={this.state.hidePath} />}
+            render={props => (
+              <Explorer
+                {...props}
+                routes={this.state.routes}
+                hidePath={this.state.hidePath}
+                src={this.state.src}
+              />
+            )}
           />
           <Route
             path='/request/:id'
-            render={props => <RoutePage {...props} routes={this.state.routes} hidePath={this.state.hidePath} />}
+            render={props => (
+              <RoutePage
+                {...props}
+                routes={this.state.routes}
+                hidePath={this.state.hidePath}
+                src={this.state.src}
+              />
+            )}
           />
           <Route
             path='/grep'
-            render={props => <Grep {...props} hidePath={this.state.hidePath} />}
+            render={props => (
+              <Grep
+                {...props}
+                hidePath={this.state.hidePath}
+              />
+            )}
           />
         </div>
       </Router>

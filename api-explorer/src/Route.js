@@ -11,7 +11,8 @@ class Route extends Component {
   static propTypes = {
     route: PropTypes.object,
     location: PropTypes.object,
-    hidePath: PropTypes.string
+    hidePath: PropTypes.string,
+    src: PropTypes.any
   }
   state = {
     expanded: false
@@ -31,12 +32,13 @@ class Route extends Component {
   }
   render () {
     const {route} = this.props
+    const {expanded} = this.state
     return (
       <div className='card'>
         <div className='card-body' style={{paddingBottom: '.75rem', paddingTop: '1rem'}}>
           <div className={`row ${this.state.expanded && 'mb-2'}`}>
             <div className='col-11'>
-              <a onClick={() => this.setState({expanded: !this.state.expanded})} style={{cursor: 'pointer'}}>
+              <a onClick={() => this.setState({expanded: !expanded})} style={{cursor: 'pointer'}}>
                 <h6
                   className={`card-subtitle text-muted`}
                   style={{marginTop: 0}}
@@ -54,7 +56,7 @@ class Route extends Component {
               </Link>
             </div>
           </div>
-          {this.state.expanded && (
+          {expanded && (
             <Fragment>
               {route.title && (
                 <h5 className='card-title'>
@@ -79,12 +81,14 @@ class Route extends Component {
                   response={this.state.response}
                 />
               )}
-              <div className='mt-5'>
-                <PathReferences
-                  route={route}
-                  hidePath={this.props.hidePath}
-                />
-              </div>
+              {this.props.src && (
+                <div className='mt-5'>
+                  <PathReferences
+                    route={route}
+                    hidePath={this.props.hidePath}
+                  />
+                </div>
+              )}
             </Fragment>
           )}
         </div>
