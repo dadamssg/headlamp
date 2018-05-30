@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import {hot} from 'react-hot-loader'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import axios from 'axios'
@@ -75,14 +75,24 @@ class App extends Component {
                 </a>
               )}
               {this.state.src && (
-                <a
-                  className='ml-3'
-                  onClick={() => this.setState({showOptions: !this.state.showOptions})}
-                  title='Settings'
-                  style={{cursor: 'pointer', color: '#007bff'}}
-                >
-                  <span className='oi oi-cog' />
-                </a>
+                <Fragment>
+                  <a
+                    className='ml-3'
+                    onClick={window.location.reload}
+                    title='Refresh'
+                    style={{cursor: 'pointer', color: '#007bff'}}
+                  >
+                    <span className='oi oi-loop-circular' />
+                  </a>
+                  <a
+                    className='ml-3'
+                    onClick={() => this.setState({showOptions: !this.state.showOptions})}
+                    title='Settings'
+                    style={{cursor: 'pointer', color: '#007bff'}}
+                  >
+                    <span className='oi oi-cog' />
+                  </a>
+                </Fragment>
               )}
             </div>
           </div>
