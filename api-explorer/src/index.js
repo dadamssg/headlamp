@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import {BrowserRouter as Router} from 'react-router-dom'
 import App from './App'
 import config from './config'
 import 'open-iconic/font/css/open-iconic-bootstrap.css'
@@ -9,4 +10,8 @@ console.log(config) // eslint-disable-line
 
 const appElement = document.getElementById('app-root')
 
-ReactDOM.render(<App />, appElement)
+ReactDOM.render((
+  <Router basename={config.env === 'production' ? '/_docs/' : undefined}>
+    <App />
+  </Router>
+), appElement)
