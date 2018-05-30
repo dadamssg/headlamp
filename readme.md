@@ -285,7 +285,7 @@ export default {
 
 ## Fixtures
 Fixture files can be nested in the `routes` directory but their file names must be prefixed with an underscore
-to not be interpreted as a route file. Example:
+to not be interpreted as a route file.
 
 ```sh
 server/
